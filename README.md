@@ -62,6 +62,9 @@ MultiQC
 | MultiQC  | Summarize and compare assembly statistics from multiple analysis reports |
 
 ---
+## Operating System
+
+- Linux (WSL Ubuntu)
 
 ## Project Highlights
 
