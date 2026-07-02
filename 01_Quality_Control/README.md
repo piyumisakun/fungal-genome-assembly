@@ -51,7 +51,7 @@ fastqc DD18_trim_1.fastq.gz DD18_trim_2.fastq.gz
 
 The following screenshot shows the successful execution of FastQC on paired-end Illumina sequencing reads.
 
-![FastQC execution](images/fastqc.png)
+![FastQC execution](images/Fastqc.png)
 
 ---
 
