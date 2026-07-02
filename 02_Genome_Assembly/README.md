@@ -78,6 +78,11 @@ spades.py \
 -m 16 \
 -o spades_output
 ```
+## Representative Screenshot
+
+The following screenshot shows the successful execution of SSPACE Basic v2.1, including processing of the library file, Bowtie indexing, paired-end read mapping, and scaffold construction.
+
+![SSPACE execution](images/SSPACE (2).jpg)
 
 ### Input
 
