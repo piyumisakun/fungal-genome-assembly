@@ -42,11 +42,16 @@ Raw Illumina paired-end sequencing reads were analyzed using FastQC to evaluate 
 
 ---
 
-## Example Command
+## Representative Command
 
 ```bash
 fastqc DD18_trim_1.fastq.gz DD18_trim_2.fastq.gz
 ```
+## Representative Screenshot
+
+The following screenshot shows the successful execution of FastQC on paired-end Illumina sequencing reads.
+
+![FastQC execution](images/fastqc.png)
 
 ---
 
