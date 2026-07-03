@@ -57,14 +57,6 @@ The screenshot below shows the successful execution of FastQC on the forward (DD
 
 ## Output
 
-## Full FastQC Reports
-
-The complete FastQC reports are available below.
-
-- [Forward reads (R1)](reports/DD18_trim_1_fastqc.html)
-- [Reverse reads (R2)](reports/DD18_trim_2_fastqc.html)
----
-
 ## Quality Assessment Summary
 | Quality Metric | Forward Reads (R1) | Reverse Reads (R2) | Interpretation |
 |---------------|:------------------:|:------------------:|----------------|
