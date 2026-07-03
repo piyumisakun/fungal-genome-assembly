@@ -56,15 +56,27 @@ The screenshot below shows the successful execution of FastQC on the forward (DD
 ---
 
 ## Output
-
-- HTML quality report
-- ZIP archive containing quality statistics
-
 ---
+
+## Quality Assessment Summary
+| Quality Metric | Forward Reads (R1) | Reverse Reads (R2) | Interpretation |
+|---------------|:------------------:|:------------------:|----------------|
+| Basic Statistics | ✅ Pass | ✅ Pass | Sequencing completed successfully |
+| Per-base Sequence Quality | ✅ Pass | ✅ Pass | High-quality reads suitable for downstream analysis |
+| Per-tile Sequence Quality | ✅ Pass | ⚠️ Warning | Minor tile variation observed in R2; acceptable for downstream analysis |
+| Sequence Length Distribution | ✅ Pass | ✅ Pass | Uniform read length across sequencing reads |
+| GC Content | ✅ Pass | ✅ Pass | GC distribution consistent with fungal genomic DNA |
+| Adapter Content | ✅ Pass | ✅ Pass | No significant adapter contamination detected |
+| **Overall Assessment** | ✅ Excellent | ✅ Good | Sequencing reads are suitable for genome assembly |
 
 ## Interpretation
 
-The FastQC reports were examined to verify that the sequencing reads were of sufficient quality for de novo genome assembly.
+The FastQC analysis demonstrated that both paired-end sequencing datasets were of high quality and suitable for downstream genome assembly. The forward reads (R1) passed all assessed quality metrics, while the reverse reads (R2) showed a warning for the *Per tile Sequence Quality* module. This warning is commonly associated with localized sequencing variation across flow-cell tiles and does not necessarily indicate poor overall read quality. The absence of significant adapter contamination, consistent sequence length distribution, and expected GC content further support the quality of the sequencing data for de novo genome assembly.
+
+
+
+---
+
 
 ---
 
