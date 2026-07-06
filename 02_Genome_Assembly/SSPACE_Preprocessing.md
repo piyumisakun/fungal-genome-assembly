@@ -72,7 +72,7 @@ DD18_trim_1_chunk_ \
 
 The same procedure was repeated for the reverse paired-end FASTQ file.
 
-## Representative Screenshot
+## Representative Image
 
 The following screenshot shows the paired-end FASTQ files being split into smaller chunks prior to SSPACE scaffolding.
 
@@ -152,6 +152,11 @@ for file1 in DD18_trim_1.chunk_*; do
     fi
 done
 ```
+## Representative Screenshot
+
+The following screenshot shows the execution of the Bash commands used to automatically generate the `library.txt` configuration file required by SSPACE.
+
+![Library generation](images/Library.png)
 
 ## Output
 
