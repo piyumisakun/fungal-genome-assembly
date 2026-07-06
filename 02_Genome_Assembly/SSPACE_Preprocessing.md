@@ -72,6 +72,12 @@ DD18_trim_1_chunk_ \
 
 The same procedure was repeated for the reverse paired-end FASTQ file.
 
+## Representative Screenshot
+
+The following screenshot shows the paired-end FASTQ files being split into smaller chunks prior to SSPACE scaffolding.
+
+![FASTQ splitting](images/split.png)
+
 ## Output
 
 - Forward read chunks
