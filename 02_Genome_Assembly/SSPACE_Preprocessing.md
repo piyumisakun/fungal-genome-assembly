@@ -125,6 +125,27 @@ Match Read Pairs       │
         ▼              │
 Generate library.txt ◄─┘
 ```
+### Representative Command
+
+```bash
+
+counter=1
+
+> /home/ubuntu/sspace_run/library.txt
+
+for file1 in DD18_trim_1.chunk_*; do
+    chunk_suffix=${file1#DD18_trim_1.chunk_}
+    file2="DD18_trim_2.chunk_$chunk_suffix"
+
+    if [ -f "$file2" ]; then
+        echo "lib$counter /home/ubuntu/sspace_run/reads_new_chunks/$file1 \
+/home/ubuntu/sspace_run/reads_new_chunks/$file2 350 0.25 FR" \
+>> /home/ubuntu/sspace_run/library.txt
+
+        ((counter++))
+    fi
+done
+```
 
 ## Output
 
