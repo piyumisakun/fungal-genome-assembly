@@ -87,12 +87,6 @@ The following screenshot shows the successful execution of SPAdes during de novo
 
 ![SPAdes execution](images/Spades.png)
 
-
-## Input
-
-- Forward paired-end reads (`DD18_trim_1.fastq.gz`)
-- Reverse paired-end reads (`DD18_trim_2.fastq.gz`)
-
 ## Output
 
 - `contigs.fasta`
@@ -141,7 +135,6 @@ perl SSPACE_Basic.pl \
 The following screenshot shows the successful execution of SSPACE Basic v2.1, including Bowtie indexing, paired-end read mapping, and scaffold construction.
 
 ![SSPACE execution](images/SSPACE.png)
-```
 
 ## Input
 
