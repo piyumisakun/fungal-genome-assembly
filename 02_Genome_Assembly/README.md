@@ -85,8 +85,7 @@ spades.py \
 
 The following screenshot shows the successful execution of SPAdes during de novo genome assembly.
 
-```markdown
-![SPAdes execution](images/spades_execution.jpg)
+![SPAdes execution](images/Spades.png)
 ```
 
 ## Input
