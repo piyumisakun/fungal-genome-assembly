@@ -81,7 +81,7 @@ spades.py \
 -o spades_output
 ```
 
-## Representative Screenshot
+## Representative Image
 
 The following screenshot shows the successful execution of SPAdes during de novo genome assembly.
 
@@ -136,12 +136,11 @@ perl SSPACE_Basic.pl \
 -b sspace_output
 ```
 
-## Representative Screenshot
+## Representative Image
 
-The following screenshot shows the successful execution of SSPACE Basic v2.1, including processing of the library file, Bowtie indexing, paired-end read mapping, and scaffold construction.
+The following screenshot shows the successful execution of SSPACE Basic v2.1, including Bowtie indexing, paired-end read mapping, and scaffold construction.
 
-```markdown
-![SSPACE execution](images/SSPACE (2).jpg)
+![SSPACE execution](images/SSPACE.png)
 ```
 
 ## Input
@@ -177,7 +176,7 @@ seqkit seq -m 1000 \
 -o ~/sspace_run/sspace_output.filtered_1000.fasta
 ```
 
-## Representative Screenshot
+## Representative Image
 
 The following screenshot shows the successful execution of SeqKit filtering and verification of the filtered scaffold assembly statistics.
 
