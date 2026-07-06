@@ -173,9 +173,7 @@ seqkit seq -m 1000 \
 
 The following screenshot shows the successful execution of SeqKit filtering and verification of the filtered scaffold assembly statistics.
 
-```markdown
-![SeqKit filtering](images/seqkit_filtering.jpg)
-```
+![SeqKit filtering](images/seqkit.png)
 
 ## Input
 
@@ -216,9 +214,7 @@ java -jar pilon.jar \
 
 The following screenshot shows the successful execution of Pilon during genome assembly polishing.
 
-```markdown
 ![Pilon polishing](images/Pilon.png)
-```
 
 ## Input
 
