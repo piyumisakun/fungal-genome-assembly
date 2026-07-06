@@ -86,7 +86,7 @@ spades.py \
 The following screenshot shows the successful execution of SPAdes during de novo genome assembly.
 
 ![SPAdes execution](images/Spades.png)
-```
+
 
 ## Input
 
@@ -224,7 +224,7 @@ java -jar pilon.jar \
 The following screenshot shows the successful execution of Pilon during genome assembly polishing.
 
 ```markdown
-![Pilon polishing](images/pilon_execution.jpg)
+![Pilon polishing](images/Pilon.png)
 ```
 
 ## Input
