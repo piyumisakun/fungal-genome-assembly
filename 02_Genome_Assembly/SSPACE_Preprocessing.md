@@ -76,7 +76,7 @@ The same procedure was repeated for the reverse paired-end FASTQ file.
 
 The following screenshot shows the paired-end FASTQ files being split into smaller chunks prior to SSPACE scaffolding.
 
-![FASTQ splitting](images/split.png)
+![FASTQ splitting](images/Split.png)
 
 ## Output
 
