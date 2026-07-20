@@ -63,7 +63,6 @@ quast.py \
 ~/pilon.fasta \
 -o ~/quast_comparison
 ```
-
 #### Representative Screenshot
 
 The figure below shows the QUAST summary comparing the four genome assemblies.
@@ -105,7 +104,30 @@ busco \
 -m genome \
 --cpu 12
 ```
+#### Representative Screenshot
 
+The screenshot below shows the execution of BUSCO v5.7.1 using the Basidiomycota lineage dataset to assess genome assembly completeness.
+
+![BUSCO command](images/busco_command.png)
+
+#### Results
+##### BUSCO Completeness Comparison
+| BUSCO Metric | SPAdes<br>(BUSCO 5.4.4) | SSPACE<br>(BUSCO 6.0.0) | Filtered (>1000 bp)<br>(BUSCO 6.0.0) | Pilon<br>(BUSCO 6.0.0) |
+|:------------|:-----------------------:|:-----------------------:|:------------------------------------:|:----------------------:|
+| Complete BUSCOs (C) | 603 (79.5%) | 1452 (82.3%) | 1437 (81.5%) | 603 (79.6%) |
+| Complete and single-copy BUSCOs (S) | 376 (49.6%) | 878 (49.8%) | 874 (49.5%) | 349 (46.0%) |
+| Complete and duplicated BUSCOs (D) | 227 (29.9%) | 574 (32.5%) | 563 (31.9%) | 254 (33.5%) |
+| Fragmented BUSCOs (F) | 94 (12.4%) | 218 (12.4%) | 190 (10.8%) | 96 (12.7%) |
+| Missing BUSCOs (M) | 61 (8.1%) | 94 (5.3%) | 137 (7.8%) | 59 (7.8%) |
+| Total BUSCO groups searched (n) | 758 | 1764 | 1764 | 758 |
+| Genes with internal stop codons (%) | – | 10.9% | 11.0% | 12.4% |
+| Internal stop codons (count) | – | 158 | 158 | 75 |
+
+#### Interpretation
+The filtered genome assembly achieved 81.5% complete BUSCOs, including 49.5% single-copy and 31.9% duplicated orthologs. Only 10.8% of BUSCO genes were fragmented, while 7.8% were missing, indicating good representation of the conserved fungal gene space. Approximately 11.0% of complete BUSCOs contained internal stop codons, suggesting that a small proportion of predicted genes may require further refinement.
+
+#### Conclusion
+BUSCO analysis demonstrated that the filtered assembly contained the majority of conserved Basidiomycota genes with relatively low fragmentation, supporting its suitability for downstream genome annotation and functional analyses.
 ---
 
 ### BBMap
