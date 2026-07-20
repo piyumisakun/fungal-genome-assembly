@@ -12,7 +12,7 @@ Following genome assembly, the quality of the assembled genome must be evaluated
 
 Multiple complementary assessment tools were used to evaluate different aspects of assembly quality, including contiguity, completeness, read support, and sequencing depth.
 
-The assessment results were compared across all four genome assemblies to identify the most complete, contiguous, and accurate assembly for downstream analyses, including genome annotation, repeat analysis, and laccase gene characterization.
+The assessment results were compared across all four genome assemblies to identify the most complete, contiguous, and accurate assembly for downstream analyses, including genome annotation, gene prediction, and laccase gene characterization etc.
 
 ---
 
