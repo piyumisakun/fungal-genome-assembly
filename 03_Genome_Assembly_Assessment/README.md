@@ -80,7 +80,8 @@ The QUAST analysis demonstrated that filtering scaffolds shorter than 1000 bp su
 
 ### BUSCO
 
-BUSCO (Benchmarking Universal Single-Copy Orthologs) was used to assess genome completeness by searching for highly conserved single-copy orthologous genes from the Basidiomycota lineage dataset. BUSCO provides a standardized measure of assembly completeness and gene space representation.
+#### Purpose
+BUSCO (Benchmarking Universal Single-Copy Orthologs) was used to assess genome assembly completeness by searching for highly conserved single-copy orthologs from the Basidiomycota lineage dataset, providing a standardized measure of the completeness of the assembled gene space.
 
 ---
 
