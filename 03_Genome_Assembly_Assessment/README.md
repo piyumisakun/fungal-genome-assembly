@@ -63,9 +63,9 @@ quast.py \
 ~/pilon.fasta \
 -o ~/quast_comparison
 ```
-#### Representative Screenshot
+##### Representative Screenshot
 
-The figure below shows the QUAST summary comparing the four genome assemblies.
+The screenshot below shows the execution of the QUAST command used to compare four genome assemblies and generate assembly quality statistics.
 
 ![QUAST summary](images/quast_summary.png)
 
@@ -93,7 +93,7 @@ The QUAST analysis demonstrated that filtering scaffolds shorter than 1000 bp su
 BUSCO (Benchmarking Universal Single-Copy Orthologs) was used to assess genome assembly completeness by searching for highly conserved single-copy orthologs from the Basidiomycota lineage dataset, providing a standardized measure of the completeness of the assembled gene space.
 
 #### Methodology
-BUSCO v5.7.1 was used to evaluate the completeness of each assembled genome (SPAdes, SSPACE, SSPACE (>1000 bp),	Pilon-polished) using the Basidiomycota lineage dataset (`basidiomycota_odb10`). BUSCO searched the assembly for highly conserved single-copy orthologous genes and classified them as Complete (single-copy or duplicated), Fragmented, or Missing. The resulting completeness metrics were used to assess the quality of the assembled gene space and determine its suitability for downstream genome annotation.
+BUSCO v6.0.0 was used to evaluate the completeness of each assembled genome (SPAdes, SSPACE, SSPACE (>1000 bp),	Pilon-polished) using the Basidiomycota lineage dataset (`basidiomycota_odb10`). BUSCO searched the assembly for highly conserved single-copy orthologous genes and classified them as Complete (single-copy or duplicated), Fragmented, or Missing. The resulting completeness metrics were used to assess the quality of the assembled gene space and determine its suitability for downstream genome annotation.
 
 #### Representative command
 ```bash
@@ -104,13 +104,13 @@ busco \
 -m genome \
 --cpu 12
 ```
-#### Representative Screenshot
-
-The screenshot below shows the execution of BUSCO v5.7.1 using the Basidiomycota lineage dataset to assess genome assembly completeness.
+##### Representative Screenshot
+The screenshot below shows the BUSCO v6.0.0 command used to assess genome assembly completeness using the Basidiomycota lineage dataset.
 
 ![BUSCO command](images/busco_command.png)
 
 #### Results
+
 ##### BUSCO Completeness Comparison
 | BUSCO Metric | SPAdes<br>(BUSCO 5.4.4) | SSPACE<br>(BUSCO 6.0.0) | Filtered (>1000 bp)<br>(BUSCO 6.0.0) | Pilon<br>(BUSCO 6.0.0) |
 |:------------|:-----------------------:|:-----------------------:|:------------------------------------:|:----------------------:|
@@ -128,6 +128,7 @@ The filtered genome assembly achieved 81.5% complete BUSCOs, including 49.5% sin
 
 #### Conclusion
 BUSCO analysis demonstrated that the filtered assembly contained the majority of conserved Basidiomycota genes with relatively low fragmentation, supporting its suitability for downstream genome annotation and functional analyses.
+
 ---
 
 ### BBMap
