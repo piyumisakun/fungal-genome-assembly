@@ -54,11 +54,6 @@ QUAST was used to evaluate assembly contiguity and fragmentation using metrics s
 #### Methodology
 QUAST v5.3.0 was used to assess four genome assemblies generated during the assembly workflow. The resulting metrics were compared to identify the assembly with the best structural quality.
 
-### Representative Screenshot
-
-The figure below shows the QUAST summary comparing the four genome assemblies.
-
-![QUAST summary](images/quast_summary.png)
 
 #### Results
 | Metric | SPAdes | SSPACE | Filtered (>1000 bp) | Pilon |
