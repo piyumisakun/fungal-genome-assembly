@@ -54,7 +54,17 @@ QUAST was used to evaluate assembly contiguity and fragmentation using metrics s
 #### Methodology
 QUAST v5.3.0 was used to assess four genome assemblies generated during the assembly workflow. The resulting metrics were compared to identify the assembly with the best structural quality.
 
-### Representative Screenshot
+#### Representative command
+```bash
+quast.py \
+~/spades.fasta \
+~/sspace.fasta \
+~/sspace1000.fasta \
+~/pilon.fasta \
+-o ~/quast_comparison
+```
+
+#### Representative Screenshot
 
 The figure below shows the QUAST summary comparing the four genome assemblies.
 
@@ -82,6 +92,19 @@ The QUAST analysis demonstrated that filtering scaffolds shorter than 1000 bp su
 
 #### Purpose
 BUSCO (Benchmarking Universal Single-Copy Orthologs) was used to assess genome assembly completeness by searching for highly conserved single-copy orthologs from the Basidiomycota lineage dataset, providing a standardized measure of the completeness of the assembled gene space.
+
+#### Methodology
+BUSCO v5.7.1 was used to evaluate the completeness of each assembled genome (SPAdes, SSPACE, SSPACE (>1000 bp),	Pilon-polished) using the Basidiomycota lineage dataset (`basidiomycota_odb10`). BUSCO searched the assembly for highly conserved single-copy orthologous genes and classified them as Complete (single-copy or duplicated), Fragmented, or Missing. The resulting completeness metrics were used to assess the quality of the assembled gene space and determine its suitability for downstream genome annotation.
+
+#### Representative command
+```bash
+busco \
+-i filtered_1000.fasta \
+-l basidiomycota_odb10 \
+-o busco_filtered_1000 \
+-m genome \
+--cpu 12
+```
 
 ---
 
