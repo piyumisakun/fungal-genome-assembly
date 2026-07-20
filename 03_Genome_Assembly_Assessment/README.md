@@ -47,34 +47,28 @@ The assessment results were compared across all four genome assemblies to identi
 ## Assessment Tools
 
 ### QUAST
+
+#### Purpose
 QUAST was used to evaluate assembly contiguity and fragmentation using metrics such as N50, L50, total assembly size, GC content, and number of contigs.
 
-| Metric | SPAdes | SSPACE | SSPACE + Filter (>1000 bp) | Pilon |
-|:-------|-------:|--------:|---------------------------:|------:|
-| # contigs (≥ 0 bp) | 90,788 | 90,788 | 8,289 | 8,289 |
-| # contigs (≥ 1000 bp) | 8,289 | 8,289 | 8,289 | 8,288 |
-| # contigs (≥ 5000 bp) | 3,441 | 3,441 | 3,441 | 3,439 |
-| # contigs (≥ 10000 bp) | 1,693 | 1,693 | 1,693 | 1,694 |
-| # contigs (≥ 25000 bp) | 300 | 300 | 300 | 300 |
-| # contigs (≥ 50000 bp) | 29 | 29 | 29 | 29 |
-| Total length (≥ 0 bp) | 75,838,118 | 75,838,118 | 55,592,797 | 55,587,771 |
-| Total length (≥ 1000 bp) | 55,592,797 | 55,592,797 | 55,592,797 | 55,586,733 |
-| Total length (≥ 5000 bp) | 44,258,592 | 44,258,592 | 44,258,592 | 44,244,473 |
-| Total length (≥ 10000 bp) | 31,790,483 | 31,790,483 | 31,790,483 | 31,797,546 |
-| Total length (≥ 25000 bp) | 10,802,473 | 10,802,473 | 10,802,473 | 10,800,793 |
-| Total length (≥ 50000 bp) | 1,981,941 | 1,981,941 | 1,981,941 | 1,981,953 |
+#### Methodology
+QUAST v5.2.0 was used to assess four genome assemblies generated during the assembly workflow. The resulting metrics were compared to identify the assembly with the best structural quality.
+
+#### Results
+| Metric | SPAdes | SSPACE | Filtered (>1000 bp) | Pilon |
+|:-------|-------:|--------:|--------------------:|------:|
+| Genome size (Mb) | 60.41 | 60.41 | 55.59 | 55.59 |
 | Total contigs | 15,627 | 15,627 | 8,289 | 8,289 |
 | Largest contig (bp) | 133,223 | 133,223 | 133,223 | 133,223 |
-| Total genome size (bp) | 60,413,866 | 60,413,866 | 55,592,797 | 55,587,731 |
 | GC (%) | 54.88 | 54.88 | 54.85 | 54.85 |
-| N50 (bp) | 10,705 | 10,705 | 11,930 | 11,927 |
-| N90 (bp) | 1,308 | 1,308 | 2,802 | 2,802 |
-| auN | 15,032.5 | 15,032.5 | 16,277.0 | 16,275.5 |
-| L50 | 1,540 | 1,540 | 1,326 | 1,326 |
-| L90 | 7,219 | 7,219 | 4,970 | 4,970 |
-| Ns per 100 kbp | 0.00 | 0.00 | 0.00 | 0.00 |
+| N50 (bp) | 10,705 | 10,705 | **11,930** | 11,927 |
+| L50 | 1,540 | 1,540 | **1,326** | 1,326 |
 
-It showed that filtering scaffolds shorter than 1000 bp reduced assembly fragmentation, increased assembly continuity (higher N50 and lower L50), while maintaining a consistent genome size and GC content. These improvements indicated a more contiguous and reliable assembly, which was selected for downstream genome annotation and subsequent analyses.
+#### Interpretation
+Comparison of the four genome assemblies showed that the initial SPAdes and SSPACE assemblies produced similar assembly statistics. Filtering scaffolds shorter than 1000 bp substantially reduced assembly fragmentation and improved continuity, as indicated by an increased N50 (10,705 to 11,930 bp) and a decreased L50 (1,540 to 1,326), while maintaining a stable GC content. These results indicate that scaffold filtering improved assembly quality without altering the overall genome composition.
+
+#### Conclusion
+The QUAST analysis demonstrated that filtering scaffolds shorter than 1000 bp substantially improved assembly continuity while maintaining genome composition. The filtered assembly was therefore selected for downstream genome annotation and subsequent analyses.
 
 ---
 
