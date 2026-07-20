@@ -2,25 +2,24 @@
 
 ## Overview
 
-This section describes the quality assessment workflow performed to evaluate the assembled genome of *Perenniporia cf. tephropora* DD18. Following genome assembly and polishing, multiple bioinformatics tools were used to assess assembly quality, completeness, sequencing coverage, and read mapping performance. Together, these analyses provided confidence in the accuracy and completeness of the assembled genome before downstream genome annotation and comparative genomic analyses.
+Evaluate the quality, completeness, and reliability of the assembled fungal genome before genome annotation and downstream comparative analyses.
 
 ---
 
-## Objectives
+## Rationale for Genome Assembly Assessment
 
-- Evaluate the overall quality of the assembled genome.
-- Assess genome assembly completeness using conserved single-copy orthologs.
-- Determine assembly continuity and structural statistics.
-- Evaluate sequencing read mapping efficiency.
-- Estimate genome sequencing coverage.
-- Summarize quality assessment results for downstream analyses.
+Following genome assembly, the quality of the assembled genome must be evaluated to determine whether it is suitable for downstream analyses. In this study, four different genome assemblies generated during the assembly workflow were assessed and compared to identify the most reliable assembly.
+
+Multiple complementary assessment tools were used to evaluate different aspects of assembly quality, including contiguity, completeness, read support, and sequencing depth.
+
+The assessment results were compared across all four genome assemblies to identify the most complete, contiguous, and accurate assembly for downstream analyses, including genome annotation, repeat analysis, and laccase gene characterization.
 
 ---
 
 ## Bioinformatics Workflow
 
 ```
-Polished Genome Assembly
+    Assembled genome
             │
             ▼
         QUAST
@@ -48,8 +47,34 @@ Polished Genome Assembly
 ## Assessment Tools
 
 ### QUAST
+QUAST was used to evaluate assembly contiguity and fragmentation using metrics such as N50, L50, total assembly size, GC content, and number of contigs.
 
-QUAST (Quality Assessment Tool for Genome Assemblies) was used to evaluate assembly statistics, including genome size, number of contigs, N50, L50, GC content, and largest contig length. These metrics provide an overall assessment of genome assembly quality and continuity.
+| Metric | SPAdes | SSPACE | SSPACE + Filter (>1000 bp) | Pilon |
+|:-------|-------:|--------:|---------------------------:|------:|
+| # contigs (≥ 0 bp) | 90,788 | 90,788 | 8,289 | 8,289 |
+| # contigs (≥ 1000 bp) | 8,289 | 8,289 | 8,289 | 8,288 |
+| # contigs (≥ 5000 bp) | 3,441 | 3,441 | 3,441 | 3,439 |
+| # contigs (≥ 10000 bp) | 1,693 | 1,693 | 1,693 | 1,694 |
+| # contigs (≥ 25000 bp) | 300 | 300 | 300 | 300 |
+| # contigs (≥ 50000 bp) | 29 | 29 | 29 | 29 |
+| Total length (≥ 0 bp) | 75,838,118 | 75,838,118 | 55,592,797 | 55,587,771 |
+| Total length (≥ 1000 bp) | 55,592,797 | 55,592,797 | 55,592,797 | 55,586,733 |
+| Total length (≥ 5000 bp) | 44,258,592 | 44,258,592 | 44,258,592 | 44,244,473 |
+| Total length (≥ 10000 bp) | 31,790,483 | 31,790,483 | 31,790,483 | 31,797,546 |
+| Total length (≥ 25000 bp) | 10,802,473 | 10,802,473 | 10,802,473 | 10,800,793 |
+| Total length (≥ 50000 bp) | 1,981,941 | 1,981,941 | 1,981,941 | 1,981,953 |
+| Total contigs | 15,627 | 15,627 | 8,289 | 8,289 |
+| Largest contig (bp) | 133,223 | 133,223 | 133,223 | 133,223 |
+| Total genome size (bp) | 60,413,866 | 60,413,866 | 55,592,797 | 55,587,731 |
+| GC (%) | 54.88 | 54.88 | 54.85 | 54.85 |
+| N50 (bp) | 10,705 | 10,705 | 11,930 | 11,927 |
+| N90 (bp) | 1,308 | 1,308 | 2,802 | 2,802 |
+| auN | 15,032.5 | 15,032.5 | 16,277.0 | 16,275.5 |
+| L50 | 1,540 | 1,540 | 1,326 | 1,326 |
+| L90 | 7,219 | 7,219 | 4,970 | 4,970 |
+| Ns per 100 kbp | 0.00 | 0.00 | 0.00 | 0.00 |
+
+It showed that filtering scaffolds shorter than 1000 bp reduced assembly fragmentation, increased assembly continuity (higher N50 and lower L50), while maintaining a consistent genome size and GC content. These improvements indicated a more contiguous and reliable assembly, which was selected for downstream genome annotation and subsequent analyses.
 
 ---
 
