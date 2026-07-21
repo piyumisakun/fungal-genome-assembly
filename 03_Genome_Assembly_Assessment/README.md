@@ -54,7 +54,7 @@ QUAST was used to evaluate assembly contiguity and fragmentation using metrics s
 #### Methodology
 QUAST v5.3.0 was used to assess four genome assemblies generated during the assembly workflow. The resulting metrics were compared to identify the assembly with the best structural quality.
 
-#### Representative command
+##### Representative command
 ```bash
 quast.py \
 ~/spades.fasta \
@@ -134,7 +134,7 @@ The screenshot below shows the BUSCO v6.0.0 command used to assess genome assemb
 | Genes with internal stop codons (%) | – | 10.9% | 11.0% | 12.4% |
 | Internal stop codons (count) | – | 158 | 158 | 75 |
 
-#### Interpretation
+##### Interpretation
 The filtered genome assembly achieved 81.5% complete BUSCOs, including 49.5% single-copy and 31.9% duplicated orthologs. Only 10.8% of BUSCO genes were fragmented, while 7.8% were missing, indicating good representation of the conserved fungal gene space. Approximately 11.0% of complete BUSCOs contained internal stop codons, suggesting that a small proportion of predicted genes may require further refinement.
 
 #### Conclusion
@@ -177,19 +177,27 @@ The screenshot below shows the BBMap alignment summary generated after mapping p
 
 ![BBMap results](images/bbmap_results.png)
 
-### Interpretation
+##### Interpretation
 
 The BBMap alignment results demonstrated excellent agreement between the paired-end Illumina sequencing reads and the assembled genome. As summarized in the table and supported by the detailed alignment report, **99.82%** of reads successfully mapped to the assembly, **84.04%** were properly paired, and the average sequencing depth was **50.11×**. Furthermore, **94.84%** of the reference genome was covered by mapped reads, indicating that the assembly is well supported by the sequencing data and is suitable for downstream analyses, including genome annotation, repeat analysis, and gene characterization.
 
-### Conclusion
-
+#### Conclusion
 BBMap confirmed that the assembled genome is highly consistent with the original sequencing reads. The high mapping rate, substantial genome coverage, and adequate sequencing depth indicate that the assembly is accurate and reliable for downstream bioinformatics analyses.
 
 ---
 
 ### Mosdepth
 
-Mosdepth was used to estimate sequencing depth across the assembled genome using mapped sequencing reads. Genome coverage analysis helps evaluate sequencing depth uniformity and supports the reliability of the assembled genome.
+#### Purpose
+Mosdepth was used to calculate sequencing depth and genome coverage by analyzing the alignment of Illumina paired-end reads to the assembled genome. Coverage statistics were used to evaluate whether the genome assembly had sufficient and uniform sequencing support for downstream analyses.
+
+#### Methodology
+The BBMap alignment file (mapped.sam) was converted to a sorted and indexed BAM file using Samtools. The sorted BAM file was then analyzed with Mosdepth to calculate genome-wide sequencing depth and coverage statistics. The resulting coverage profiles were used to assess average sequencing depth, genome coverage, and the distribution of read coverage across the assembled genome.
+
+##### Representative command
+```bash
+mosdepth -t 4 mapped mapped.sorted.bam
+```
 
 ---
 
