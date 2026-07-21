@@ -2,7 +2,7 @@
 
 ## Overview
 
-This module demonstrates the workflow used to extract conserved fungal DNA barcode genes from a draft genome assembly and validate their identities using NCBI BLASTn. The validated marker genes were subsequently used for downstream phylogenetic analyses.
+This module demonstrates the workflow used to extract conserved fungal DNA barcode genes from a draft genome assembly and validate their identities using NCBI BLASTn. The validated marker genes were subsequently used for downstream analyses.
 
 ## Objectives
 
@@ -11,7 +11,7 @@ This module demonstrates the workflow used to extract conserved fungal DNA barco
 - Confirm gene identity prior to downstream phylogenetic analysis.
 
 ## Workflow
-
+```
 Genome Assembly
 ↓
 Barcode Gene Extraction
@@ -23,3 +23,4 @@ NCBI BLASTn Validation
 Evaluation of Sequence Similarity
 ↓
 Validated Marker Genes
+```
