@@ -205,6 +205,20 @@ The screenshot below shows the workflow used to prepare the sorted BAM file and 
 
 #### Results
 
+#### Coverage per Contig (Overall)
+
+![Coverage per Contig](images/coverage_plot.png)
+
+**Figure 1.** Genome-wide mean sequencing coverage across all assembled contigs generated using Mosdepth. The plot shows the overall distribution of coverage, including a small number of high-coverage contigs.
+
+---
+
+#### Coverage per Contig (Zoomed View)
+
+![Coverage per Contig (Zoomed)](images/coverage_plot_zoom.png)
+
+**Figure 2.** Zoomed view of the coverage distribution (capped at 100×) highlighting the coverage pattern across the majority of assembled contigs. This view improves visualization by minimizing the influence of extreme high-coverage contigs.
+
 ---
 
 ## Key Outcomes
