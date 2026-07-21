@@ -198,6 +198,12 @@ The BBMap alignment file (mapped.sam) was converted to a sorted and indexed BAM 
 ```bash
 mosdepth -t 4 mapped mapped.sorted.bam
 ```
+##### Representative Screenshot
+The screenshot below shows the workflow used to prepare the sorted BAM file and execute Mosdepth for genome-wide sequencing depth analysis.
+
+![mosdepth command](images/mosdepth.png)
+
+#### Results
 
 ---
 
