@@ -58,5 +58,16 @@ Filter BLAST results to retain only high-confidence alignments based on sequence
 awk '$3>=85 && $4>=300' ssu_result.tsv > ssu_filtered.tsv
 ```
 #### Representative Screenshot 
+Figure 2. Filtering BLASTn alignments based on sequence identity and alignment length.
+
+#### Interpretation
+Filtering removed low-confidence matches and retained only candidate alignments meeting the predefined similarity criteria for downstream analysis.
+
+### Step 3 – Normalize Alignment Coordinates
+
+#### Purpose
+Normalize genomic coordinates to ensure that sequence extraction is performed using correctly ordered start and end positions.
+
+#### Representative Command
 
 
