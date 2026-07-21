@@ -106,7 +106,7 @@ BUSCO (Benchmarking Universal Single-Copy Orthologs) was used to assess genome a
 #### Methodology
 BUSCO v6.0.0 was used to evaluate the completeness of each assembled genome (SPAdes, SSPACE, SSPACE (>1000 bp),	Pilon-polished) using the Basidiomycota lineage dataset (`basidiomycota_odb10`). BUSCO searched the assembly for highly conserved single-copy orthologous genes and classified them as Complete (single-copy or duplicated), Fragmented, or Missing. The resulting completeness metrics were used to assess the quality of the assembled gene space and determine its suitability for downstream genome annotation.
 
-#### Representative command
+##### Representative command
 ```bash
 busco \
 -i filtered_1000.fasta \
@@ -142,13 +142,26 @@ BUSCO analysis demonstrated that the filtered assembly contained the majority of
 
 ---
 
-
-
 ### BBMap
 
-BBMap was used to align the quality-filtered Illumina paired-end sequencing reads back to the assembled genome. Read mapping statistics provide an indication of assembly accuracy, mapping efficiency, and how well the assembled genome represents the original sequencing data.
+#### Purpose
+BBMap was used to evaluate the reliability of the genome assembly by mapping cleaned paired-end Illumina reads back to the assembled genome. Read mapping statistics were used to assess assembly accuracy, mapping efficiency, pairing consistency, and sequencing error rates.
 
+#### Methodology
+BBMap was used to align cleaned paired-end reads to the SPAdes genome assembly. Mapping statistics, including mapping rate, properly paired reads, insert size distribution, substitution, insertion, and deletion rates, were evaluated to determine the quality and reliability of the assembled genome.
+
+##### Representative command
+```bash
+bbmap.sh
+ref=/home/ubuntu/contigs.fasta \
+in1=/home/ubuntu/DD18_trim_1.fastq \
+in2=/home/ubuntu/DD18_trim_2.fastq \
+out=/home/ubuntu/mapped.sam \
+covstats=/home/ubuntu/covstats.txt \
+threads=16
 ---
+
+#### Results
 
 ### Mosdepth
 
