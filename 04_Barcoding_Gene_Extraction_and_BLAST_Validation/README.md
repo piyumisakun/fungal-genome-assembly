@@ -55,7 +55,9 @@ Filter BLAST results to retain only high-confidence alignments based on sequence
 
 #### Representative command
 ```bash
-awk '$3>=85 && $4>=300' ssu_result.tsv > ssu_filtered.tsv
+awk 'BEGIN {OFS="\t"}
+$3>=85 && $4>=300 {print}
+' ssu_result.tsv > ssu_filtered.tsv
 ```
 #### Representative Screenshot 
 Figure 2. Filtering BLASTn alignments based on sequence identity and alignment length.
