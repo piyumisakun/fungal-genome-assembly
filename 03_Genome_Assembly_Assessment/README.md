@@ -159,9 +159,33 @@ in2=/home/ubuntu/DD18_trim_2.fastq \
 out=/home/ubuntu/mapped.sam \
 covstats=/home/ubuntu/covstats.txt \
 threads=16
----
-
+```
 #### Results
+
+The key BBMap alignment statistics are summarized below.
+| Metric | Value |
+|--------|------:|
+| Total reads | 25,346,186 |
+| Mapped reads | 25,300,412 |
+| Mapping rate | **99.82%** |
+| Properly paired reads | **84.04%** |
+| Average coverage | **50.11×** |
+| Reference bases covered | **94.84%** |
+
+##### Representative Screenshot
+The screenshot below shows the BBMap alignment summary generated after mapping paired-end Illumina reads to the assembled genome. 
+
+![BBMap results](images/bbmap_results.png)
+
+### Interpretation
+
+The BBMap alignment results demonstrated excellent agreement between the paired-end Illumina sequencing reads and the assembled genome. As summarized in the table and supported by the detailed alignment report, **99.82%** of reads successfully mapped to the assembly, **84.04%** were properly paired, and the average sequencing depth was **50.11×**. Furthermore, **94.84%** of the reference genome was covered by mapped reads, indicating that the assembly is well supported by the sequencing data and is suitable for downstream analyses, including genome annotation, repeat analysis, and gene characterization.
+
+### Conclusion
+
+BBMap confirmed that the assembled genome is highly consistent with the original sequencing reads. The high mapping rate, substantial genome coverage, and adequate sequencing depth indicate that the assembly is accurate and reliable for downstream bioinformatics analyses.
+
+---
 
 ### Mosdepth
 
