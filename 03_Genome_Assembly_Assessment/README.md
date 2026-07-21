@@ -79,7 +79,7 @@ The screenshot below shows the execution of the QUAST command used to compare fo
 | N50 (bp) | 10,705 | 10,705 | **11,930** | 11,927 |
 | L50 | 1,540 | 1,540 | **1,326** | 1,326 |
 
-#### Interpretation
+##### Interpretation
 Comparison of the four genome assemblies showed that the initial SPAdes and SSPACE assemblies produced similar assembly statistics. Filtering scaffolds shorter than 1000 bp substantially reduced assembly fragmentation and improved continuity, as indicated by an increased N50 (10,705 to 11,930 bp) and a decreased L50 (1,540 to 1,326), while maintaining a stable GC content. These results indicate that scaffold filtering improved assembly quality without altering the overall genome composition.
 
 #### Conclusion
@@ -178,7 +178,6 @@ The screenshot below shows the BBMap alignment summary generated after mapping p
 ![BBMap results](images/bbmap_results.png)
 
 ##### Interpretation
-
 The BBMap alignment results demonstrated excellent agreement between the paired-end Illumina sequencing reads and the assembled genome. As summarized in the table and supported by the detailed alignment report, **99.82%** of reads successfully mapped to the assembly, **84.04%** were properly paired, and the average sequencing depth was **50.11×**. Furthermore, **94.84%** of the reference genome was covered by mapped reads, indicating that the assembly is well supported by the sequencing data and is suitable for downstream analyses, including genome annotation, repeat analysis, and gene characterization.
 
 #### Conclusion
@@ -205,7 +204,7 @@ The screenshot below shows the workflow used to prepare the sorted BAM file and 
 
 #### Results
 
-#### Coverage per Contig (Overall)
+##### Coverage per Contig (Overall)
 
 ![Coverage per Contig](images/coverage_plot.png)
 
@@ -213,11 +212,32 @@ The screenshot below shows the workflow used to prepare the sorted BAM file and 
 
 ---
 
-#### Coverage per Contig (Zoomed View)
+##### Coverage per Contig (Zoomed View)
 
 ![Coverage per Contig (Zoomed)](images/coverage_plot_zoom.png)
 
 **Figure 2.** Zoomed view of the coverage distribution (capped at 100×) highlighting the coverage pattern across the majority of assembled contigs. This view improves visualization by minimizing the influence of extreme high-coverage contigs.
+
+##### Interpretation
+The overall coverage plot indicates that most contigs were covered at moderate sequencing depths, while a small number of contigs exhibited substantially higher coverage. The zoomed view shows that the majority of contigs were covered within the expected range, consistent with the average sequencing depth of approximately 50×. These results indicate that sequencing coverage was generally sufficient and well distributed across the assembled genome, supporting the reliability of the assembly for downstream analyses.
+
+##### GC Content vs Coverage
+
+The figure below illustrates the relationship between GC content and mean sequencing coverage for assembled contigs. Each point represents an individual contig.
+
+![GC vs Coverage](images/gc_vs_coverage.png)
+
+##### Interpretation
+No strong relationship was observed between GC content and sequencing depth. Most contigs clustered around 52–60% GC, with moderate sequencing coverage, indicating minimal GC-related sequencing bias. A few contigs showed unusually high coverage regardless of GC content, suggesting that these regions may represent repetitive elements or highly abundant sequences rather than GC-dependent coverage variation.
+
+
+### Interpretation
+
+Mosdepth analysis demonstrated that the assembled genome achieved an average sequencing depth of approximately **50×**, with **94.84%** of reference bases covered by mapped reads. Coverage profiles indicated that most contigs had moderate and relatively uniform sequencing depth, while a small number of contigs exhibited exceptionally high coverage, likely corresponding to repetitive genomic regions. Furthermore, GC content analysis showed no strong relationship between GC percentage and sequencing coverage, suggesting minimal GC bias and providing additional support for the quality and reliability of the genome assembly.
+
+### Conclusion
+
+Mosdepth analysis demonstrated that the assembled genome was supported by high sequencing depth and broad read coverage. The average genome coverage (~50×) and extensive coverage across the reference genome indicate that the assembly is well supported by the sequencing data. Together with the BBMap mapping results, these findings provide strong evidence that the assembly is reliable and suitable for downstream analyses, including genome annotation, repeat identification, and gene characterization.
 
 ---
 
