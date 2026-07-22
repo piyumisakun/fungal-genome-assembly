@@ -1,4 +1,4 @@
-# Barcoding Gene Extraction and BLAST Validation
+# Barcoding Gene Extraction and BLASTn Validation
 
 ## Overview
 
