@@ -63,7 +63,10 @@ $3>=85 && $4>=300 {print}
 ' ssu_result.tsv > ssu_filtered.tsv
 ```
 #### Representative Screenshot 
+
 Figure 2. Filtering BLASTn alignments based on sequence identity and alignment length.
+
+![Gene Extraction](images/blastn_2.png)
 
 #### Interpretation
 Filtering removed low-confidence matches and retained only candidate alignments meeting the predefined similarity criteria for downstream analysis.
@@ -82,11 +85,73 @@ s=$9; e=$10;
 if (s>e){tmp=s; s=e; e=tmp}
 print $1,$2,$3,$4,$5,$6,$7,$8,s,e,$11,$12
 }' ssu_filtered.tsv > ssu_filtered_norm.tsv
+```
 
 #### Representative Screenshot 
 
-Figure 1. Running BLASTn to identify candidate genomic regions corresponding to the target barcode gene in the assembled genome.
+Figure 3. Running BLASTn to identify candidate genomic regions corresponding to the target barcode gene in the assembled genome.
 
-![Gene Extraction](images/blastn_1.png)
+![Gene Extraction](images/blastn_3.png)
+
+#### Interpretation
+Coordinate normalization corrected alignments reported on the reverse strand, ensuring accurate genomic coordinates for sequence extraction.
+
+### Step 4 – Identify the Final Genomic Region
+
+#### Purpose
+Determine the scaffold containing the barcode gene and identify the genomic interval corresponding to the complete candidate region (minimum start and maximum end positions for the gene.).
+
+#### Representative Command 
+```bash
+cut -f2 ssu_filtered_norm.tsv | sort | uniq -c | sort -nr | head
+```
+
+```bash
+awk -v scaf="scaffold438|size21283" '
+$2==scaf {
+if(!seen){min=$9; max=$10; seen=1}
+if($9<min) min=$9
+if($10>max) max=$10
+}
+END{
+if(seen) print min, max
+else print "No hits found"
+}' ssu_filtered_norm.tsv
+```
+
+#### Representative Screenshot 
+
+Figure 4. Identification of the scaffold with the highest number of BLAST hits and determination of the genomic coordinates for sequence extraction.
+
+![Gene Extraction](images/blastn_4.png)
+
+#### Interpretation
+Extract the nucleotide sequence corresponding to the identified genomic coordinates from the assembled genome.
+
+### Step 5 – Extract the Gene Sequence
+
+#### Purpose
+Extract the nucleotide sequence corresponding to the identified genomic coordinates from the assembled genome.
+
+#### Representative Command
+```bash
+samtools faidx \
+../perenniporia_assembled_genome.fasta \
+scaffold438:9155-10542 \
+> Perenniporia_SSU.fasta
+```
+#### Representative Screenshot 
+
+Figure 5. Extraction of the target barcode gene sequence from the assembled genome using Samtools `faidx`, followed by verification of the extracted FASTA sequence using SeqKit. The extracted sequence was successfully saved in FASTA format and its basic sequence statistics were confirmed.
+
+![Gene Extraction](images/blastn_5.png)
+
+#### Interpretation
+The target barcode gene sequence was successfully extracted from the assembled genome using the genomic coordinates identified in the previous step. SeqKit confirmed that a single FASTA sequence was generated and provided basic sequence statistics, verifying that the extracted sequence was complete and correctly formatted for downstream BLASTn validation and phylogenetic analyses.
+
+
+
+
+
 
 
