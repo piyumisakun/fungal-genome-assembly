@@ -43,7 +43,10 @@ blastn \
 ```
 
 #### Representative Screenshot 
+
 Figure 1. Running BLASTn to identify candidate genomic regions corresponding to the target barcode gene in the assembled genome.
+
+![Gene Extraction](images/blastn_1.png)
 
 #### Interpretation
 BLASTn identified multiple candidate alignments between the reference barcode gene and the assembled genome. These candidate regions were used for subsequent filtering and coordinate analysis.
