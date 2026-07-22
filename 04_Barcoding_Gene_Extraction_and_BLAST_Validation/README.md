@@ -74,5 +74,19 @@ Filtering removed low-confidence matches and retained only candidate alignments 
 Normalize genomic coordinates to ensure that sequence extraction is performed using correctly ordered start and end positions.
 
 #### Representative Command
+```bash
+awk '
+BEGIN{OFS="\t"}
+{
+s=$9; e=$10;
+if (s>e){tmp=s; s=e; e=tmp}
+print $1,$2,$3,$4,$5,$6,$7,$8,s,e,$11,$12
+}' ssu_filtered.tsv > ssu_filtered_norm.tsv
+
+#### Representative Screenshot 
+
+Figure 1. Running BLASTn to identify candidate genomic regions corresponding to the target barcode gene in the assembled genome.
+
+![Gene Extraction](images/blastn_1.png)
 
 
