@@ -29,25 +29,25 @@ This section describes the genome assembly workflow used to reconstruct the geno
 Raw Illumina Paired-End Reads
             │
             ▼
-SPAdes
-(De novo assembly)
+          SPAdes
+     (De novo assembly)
             │
             ▼
-Contigs
+         Contigs
             │
             ▼
-SSPACE
-(Scaffolding)
+          SSPACE
+      (Scaffolding)
             │
             ▼
-Scaffold Assembly
+     Scaffold Assembly
             │
             ▼
-SeqKit
+          SeqKit
 (Filter scaffolds ≥1000 bp)
             │
             ▼
-Pilon
+          Pilon
 (Assembly polishing)
             │
             ▼
