@@ -11,15 +11,15 @@ Conserved DNA barcode genes are widely used for fungal species identification an
 ## Workflow
 ```
 Genome Assembly
-↓
+      ↓
 Barcode Gene Extraction
-↓
+      ↓
 Selection of Candidate Regions
-↓
+      ↓
 NCBI BLASTn Validation
-↓
+      ↓
 Evaluation of Sequence Similarity
-↓
+      ↓
 Validated Marker Genes
 ```
 ## Barcode Gene Extraction
