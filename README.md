@@ -22,28 +22,28 @@ This repository documents a Linux-based bioinformatics workflow for **de novo fu
 Raw Illumina Paired-End Reads (Forward & Reverse)
                 │
                 ▼
-FastQC
+             FastQC
                 │
                 ▼
-SPAdes
+              SPAdes
                 │
                 ▼
-SSPACE
+              SSPACE
                 │
                 ▼
-QUAST
+              QUAST
                 │
                 ▼
-BUSCO
+              BUSCO
                 │
                 ▼
-BBMap
+              BBMap
                 │
                 ▼
-Mosdepth
+             Mosdepth
                 │
                 ▼
-MultiQC
+             MultiQC
 ```
 
 ---
