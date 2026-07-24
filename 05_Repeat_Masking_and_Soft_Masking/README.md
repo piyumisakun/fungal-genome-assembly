@@ -8,3 +8,29 @@ RepeatModeler is a de novo repeat discovery tool used to identify repetitive DNA
 ### Rationale
 Repetitive DNA sequences can interfere with accurate gene prediction by producing false or fragmented gene models. Therefore, repetitive elements should be identified before structural annotation. RepeatModeler performs de novo repeat discovery by analyzing the assembled genome and constructing a species-specific repeat library. This custom repeat library improves repeat detection accuracy, particularly for organisms whose repetitive elements are poorly represented in public databases.
 
+### Workflow
+```
+Assembled Genome
+        │
+        ▼
+Build Genome Database
+        │
+        ▼
+RepeatModeler
+        │
+        ▼
+De novo Repeat Discovery
+        │
+        ▼
+Species-specific Repeat Library
+        │
+        ▼
+RepeatMasker
+```
+
+### Methodology
+
+#### Step 1 – Build the Genome Database
+The assembled genome was converted into a searchable database using the BuildDatabase utility provided with RepeatModeler.
+
+#### Representative Commands
