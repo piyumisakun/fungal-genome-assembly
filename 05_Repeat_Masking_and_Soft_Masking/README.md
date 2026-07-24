@@ -1,4 +1,4 @@
-# Repeat_Masking_and_Soft_Masking
+# Repeat Masking and Soft Masking
 
 ## Repeat Identification Using RepeatModeler
 
@@ -33,4 +33,34 @@ RepeatMasker
 #### Step 1 – Build the Genome Database
 The assembled genome was converted into a searchable database using the BuildDatabase utility provided with RepeatModeler.
 
-#### Representative Commands
+##### Representative Commands
+```
+BuildDatabase \
+-name perenniporia_db \
+sspace_output.filtered_1000.fasta
+```
+
+#### Step 2 – Perform De Novo Repeat Discovery
+RepeatModeler iteratively analyzed the genome database to identify repetitive sequence families using its integrated repeat discovery algorithms.
+
+##### Representative Commands
+```
+RepeatModeler \ 
+-database perenniporia_db \
+-threads 12 \ 
+-LTRStruct
+```
+
+#### Step 3 – Generate a Species-specific Repeat Library
+The identified repeat families were combined into a custom repeat library, which was used as the reference library for RepeatMasker to perform repeat masking and soft masking.
+
+##### Representative Commands
+```
+RepeatMasker \
+-pa 12 \ 
+-xsmall \
+-lib perenniporia_db-families.fa \
+sspace_output.filtered_1000.fasta
+```
+
+
